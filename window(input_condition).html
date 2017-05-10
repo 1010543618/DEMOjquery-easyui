@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Window - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="./themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="./themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo/demo.css">
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<script type="text/javascript" src="./jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Basic Window</h2>
+	<p>Window can be dragged freely on screen.</p>
+	<div id="om-input-query-condition-window" class="easyui-window" title="条件查询" data-options="iconCls:'icon-save'" style="width:300px;height:370px;padding:10px;display: none;">
+		<div>
+			<div style=" text-align:center; margin-bottom:10px;">
+				<span style="display: inline-block;width:100px;font-size:12px;">请选择查询图层：</span>
+				<select id="query_layer" style=" width:150px" name="query_layer" onchange="changeSelected()"></select>
+			</div>
+			<div style=" text-align:center; margin-bottom:10px;">
+				<span style="display: inline-block;width:100px;font-size:12px;">请选择属性字段：</span>
+				<select id="att" name="att" style=" width:150px" onchange="change()"></select>
+			</div>
+			<div style=" text-align:center;">
+				<button value="+" style="width:60px; height:25px;" type="button" onclick="clickButton(this)">+</button>
+				<button value="-" style="width:60px; height:25px;" type="button" onclick="clickButton(this)" >-</button>
+				<button value="*" style="width:60px; height:25px;" type="button" onclick="clickButton(this)">*</button>
+				<button value="/" style="width:60px; height:25px;" type="button" onclick="clickButton(this)">/</button>
+			</div>
+			<div style=" text-align:center;">
+				<button value=">=" style="width:60px; height:25px;" type="button" onclick="clickButton(this)" > >=</button>
+				<button value="<="  style="width:60px; height:25px;" type="button" onclick="clickButton(this)" ><=</button>
+				<button  value=">"  style="width:60px; height:25px;" type="button" onclick="clickButton(this)" >></button>
+				<button value="<"  style="width:60px; height:25px;" type="button" onclick="clickButton(this)" ><</button>
+			</div>
+			<div style=" text-align:center;">
+				<button  value="=" style="width:60px; height:25px;" type="button" onclick="clickButton(this)" >=</button>
+				<button value="!="  style="width:60px; height:25px;" type="button" onclick="clickButton(this)">!=</button>
+				<button value="and"  style="width:60px; height:25px;" type="button" onclick="clickButton(this)" >and</button>
+				<button value="or"  style="width:60px; height:25px;" type="button" onclick="clickButton(this)" >or</button>
+			</div>
+			<div style=" text-align:center;margin-bottom:10px;">
+				<button value="not"  style="width:60px; height:25px;" type="button" onclick="clickButton(this)" >not</button>
+				<button  value="like" style="width:60px; height:25px;" type="button" onclick="clickButton(this)" >like</button>
+				<button  value="is null" style="width:60px; height:25px;" type="button" onclick="clickButton(this)" >is null</button>
+				<button value="%"  style="width:60px; height:25px;" type="button" onclick="clickButton(this)" >%</button>
+			</div>
+			<div style="text-align:center; margin-bottom:10px;">
+				<span style=" width:250px;font-size:12px;">&nbsp;&nbsp;请输入查询条件：例如: ID>='0'</span>
+			</div>
+			<div style=" text-align:center; margin-bottom:10px;">
+				<textarea id="queryText" cols="6" rows="3" style="width:250px; height:60px; resize:none;"></textarea>
+			</div>
+			<div style=" text-align:center; margin-bottom:10px;">
+				<button style="margin-left:5px; margin-right:5px; width:70px; height:25px;" type="button" onclick="conditionQuery()">查询</button>
+				<button style="margin-left:5px; margin-right:5px;width:70px; height:25px;" type="button" onclick="clearQueryText()">清空</button>
+				<button style="margin-left:5px; margin-right:5px;width:70px; height:25px;" type="button" onclick="closeQueryC()">关闭</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
