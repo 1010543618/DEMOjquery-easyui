@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>City Planning Assistance System</title>
+	<link rel="stylesheet" type="text/css" href="./themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="./themes/icon.css">
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<script type="text/javascript" src="./jquery.easyui.min.js"></script>
+</head>
+<!-- 
+	fit_doument：放大整个文档到窗口
+	
+	fit 	
+	boolean 	
+	当设置为 true 时，就设置布局（layout）的尺寸适应它的父容器。当在 'body' 标签上创建布局（layout）时，它将自动最大化到整个页面的全部尺寸。 	
+	false 
+-->
+<body class="easyui-layout" data-options="fit:true">
+	<div data-options="region:'north'" style="height:100px"></div>
+	<div data-options="region:'south'" style="height:40px;"></div>
+	<div data-options="region:'west',split:true" title="West" style="width:250px;">
+		<div class="easyui-accordion" data-options="fit:true,border:false">
+			<div title="Title1" style="padding:10px;">
+				content1
+			</div>
+			<div title="Title2" data-options="selected:true" style="padding:10px;">
+				content2
+			</div>
+			<div title="Title3" style="padding:10px">
+				content3
+			</div>
+		</div>
+	</div>
+	<div data-options="region:'center',title:'MAP',iconCls:'icon-ok'">
+		<div class="easyui-tabs" data-options="fit:true,border:false,plain:true">
+			<div title="About"></div>
+			<div title="DataGrid">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
